@@ -1,7 +1,11 @@
 import express from "express";
 import indexRouter from "./routes/indexRouter.js";
+import path from "node:path";
 
 const app = express();
+
+app.set("views", path.join(import.meta.dirname, "views"));
+app.set("view engine", "ejs");
 
 const PORT = 3000;
 app.listen(PORT, (error) => {
@@ -10,6 +14,9 @@ app.listen(PORT, (error) => {
     }
     console.log("Hi");     //Erase this later
 });
+
+const assetsPath = path.join(import.meta.dirname, "public");
+app.use(express.static(assetsPath));
 
 app.use("/", indexRouter);
 app.use((req, res) => {
