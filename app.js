@@ -12,6 +12,9 @@ app.listen(PORT, (error) => {
 });
 
 app.use("/", indexRouter);
+app.use((req, res) => {
+    res.status(404).send("Oh no, the page was not found")
+});
 
 app.use((err, req, res, next) => {
     console.error(err);
