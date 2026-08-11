@@ -12,9 +12,9 @@
         <main id="formMain">
             <form method="POST" action="/new">
                 <label for="nameInput">Put your name:</label>
-                <input type="text" id="nameInput" required placeholder="David">
+                <input name="nameInput" type="text" id="nameInput" required placeholder="David">
                 <label for="messageInput">Put your message:</label>
-                <textarea id="messageInput" required maxlength="200" placeholder="Very good"></textarea>
+                <textarea name="messageInput" id="messageInput" required maxlength="200" placeholder="Very good"></textarea>
                 <button type="submit">Submit</button>
             </form>
         </main>
