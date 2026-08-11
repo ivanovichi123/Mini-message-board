@@ -9,10 +9,20 @@
 </head>
 <body>
     <header>
-        <h1>Message board</h1>
+        <h1> <%= title %> </h1>
     </header>
     <main>
-        <p>Index</p>
+
+        <div id="board">
+            <% messages.map((message) => { %>
+            <div class="message">
+                <h3> <%= message.user %> </h3>
+                <p class="theMessage"> <%= message.text %> </p>
+                <p class="date"> <%= new Intl.DateTimeFormat("es-MX", options).format(message.added) %> </p>
+            </div>
+            <% }) %>
+        </div>
+
     </main>
     <footer>
         <p>This page was made by Ivanovichis production</p>

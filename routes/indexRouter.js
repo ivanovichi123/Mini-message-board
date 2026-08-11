@@ -19,10 +19,23 @@ const messages = [
     }
 ];
 
+let options = {
+    weekday: "long",
+    year: "numeric",
+    month: "long",
+    day: "numeric",
+    hour: "numeric",
+    minute: "numeric"
+};
+
 const indexRouter = Router();
 
-indexRouter.get("/", getIndex);
+indexRouter.get("/", (req, res) => {
+    getIndex(req, res, messages, options);
+});
 
-indexRouter.get("/new", getIndex);
+indexRouter.get("/new", (req, res) => {
+    getIndex(req, res, messages, options);
+});
 
 export default indexRouter;
