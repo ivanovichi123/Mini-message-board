@@ -8,9 +8,7 @@
     <title>Message Board</title>
 </head>
 <body>
-    <header>
-        <h1> <%= title %> </h1>
-    </header>
+    <%- include('header', {title: title}); %>
     <main>
 
         <div id="board">
@@ -24,8 +22,6 @@
         </div>
 
     </main>
-    <footer>
-        <p>This page was made by Ivanovichis production</p>
-    </footer>
+    <%- include('footer'); %>
 </body>
 </html>
