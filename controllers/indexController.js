@@ -6,4 +6,8 @@ const getIndex = (req, res, messages, options) => {
   });
 };
 
-export default getIndex;
+const getForm = (req, res) => {
+  res.render("form", {title: "Mini Message Board"});
+}
+
+export { getIndex, getForm };

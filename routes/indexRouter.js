@@ -1,5 +1,5 @@
 import { Router } from "express";
-import getIndex from "../controllers/indexController.js";
+import { getIndex, getForm } from "../controllers/indexController.js";
 
 const messages = [
   {
@@ -34,8 +34,6 @@ indexRouter.get("/", (req, res) => {
   getIndex(req, res, messages, options);
 });
 
-indexRouter.get("/new", (req, res) => {
-  getIndex(req, res, messages, options);
-});
+indexRouter.get("/new", getForm);
 
 export default indexRouter;
