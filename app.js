@@ -15,7 +15,7 @@ app.listen(PORT, (error) => {
   console.log("Hi"); //Erase this later
 });
 
-app.use(express.urlencoded({extended: true}));
+app.use(express.urlencoded({ extended: true }));
 
 const assetsPath = path.join(import.meta.dirname, "public");
 app.use(express.static(assetsPath));

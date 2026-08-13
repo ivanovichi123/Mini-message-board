@@ -1,5 +1,9 @@
 import { Router } from "express";
-import { getIndex, getForm } from "../controllers/indexController.js";
+import {
+  getIndex,
+  getForm,
+  messageInfo,
+} from "../controllers/indexController.js";
 
 const messages = [
   {
@@ -35,6 +39,11 @@ indexRouter.get("/", (req, res) => {
 });
 
 indexRouter.get("/new", getForm);
+
+indexRouter.get("/open/:messageNumber", (req, res) => {
+  const messageNumber = req.params;
+  messageInfo(req, res, messageNumber.messageNumber, messages, options);
+});
 
 indexRouter.post("/new", (req, res) => {
   let messageUser = req.body.nameInput;

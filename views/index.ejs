@@ -10,15 +10,16 @@
 <body>
     <%- include('header', {title: title}); %>
     <nav>
-        <a href="/new">Add a new message!!</a>
+        <a class="newMessage" href="/new">Add a new message!!</a>
     </nav>
     <main>
 
         <div id="board">
-            <% messages.map((message) => { %>
+            <% messages.map((message, index) => { %>
             <div class="message">
                 <h3> <%= message.user %> </h3>
                 <p class="theMessage"> <%= message.text %> </p>
+                <a href="/open/<%= index %>"> Message info </a>
                 <p class="date"> <%= new Intl.DateTimeFormat("es-MX", options).format(message.added) %> </p>
             </div>
             <% }) %>

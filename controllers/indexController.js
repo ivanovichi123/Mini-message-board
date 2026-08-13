@@ -7,7 +7,16 @@ const getIndex = (req, res, messages, options) => {
 };
 
 const getForm = (req, res) => {
-  res.render("form", {title: "Mini Message Board"});
-}
+  res.render("form", { title: "Mini Message Board" });
+};
 
-export { getIndex, getForm };
+const messageInfo = (req, res, messageNumber, messages, options) => {
+  res.render("open", {
+    messageNumber: messageNumber,
+    title: "Mini Message Board",
+    messages: messages,
+    options: options,
+  });
+};
+
+export { getIndex, getForm, messageInfo };

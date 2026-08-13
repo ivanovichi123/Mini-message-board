@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/styles.css">
+    <link rel="icon" type="image/svg+xml" href="/Logo.svg">
+    <title>Message Board</title>
+</head>
+<body>
+    <%- include('header', {title: title}); %>
+    <nav>
+        <a class="indexReturn" href="/">Return to index</a>
+    </nav>
+    <main id="openMain">
+
+        <h2> <span>Message</span> <%= messageNumber %></h2>
+        <% let theUser = messages[messageNumber]; %>
+        <p class="openText"> <span>User:</span> <%= theUser.user %></p>
+        <p class="openText"> <span>Message:</span> <%= theUser.text %></p>
+        <p class="openText"> <span>Date:</span> <%= new Intl.DateTimeFormat("es-MX", options).format(theUser.added) %></p>
+
+    </main>
+    <%- include('footer'); %>
+</body>
+</html>
