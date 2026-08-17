@@ -12,7 +12,6 @@ app.listen(PORT, (error) => {
   if (error) {
     throw error;
   }
-  console.log("Hi"); //Erase this later
 });
 
 app.use(express.urlencoded({ extended: true }));
