@@ -10,6 +10,7 @@
     <body>
         <%- include('header') %>
         <main id="formMain">
+            <%- include ("partials/errors.ejs") %>
             <form method="POST" action="/new">
                 <label for="nameInput">Put your name:</label>
                 <input name="nameInput" type="text" id="nameInput" required placeholder="David">

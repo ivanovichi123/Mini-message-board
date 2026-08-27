@@ -15,10 +15,10 @@
     <main id="openMain">
 
         <h2> <span>Message</span> <%= messageNumber %></h2>
-        <% let theUser = messages[messageNumber]; %>
-        <p class="openText"> <span>User:</span> <%= theUser.user %></p>
-        <p class="openText"> <span>Message:</span> <%= theUser.text %></p>
-        <p class="openText"> <span>Date:</span> <%= new Intl.DateTimeFormat("es-MX", options).format(theUser.added) %></p>
+        <% let options = { weekday: "long", year: "numeric", month: "long", day: "numeric", hour: "numeric", minute: "numeric" }; %>
+        <p class="openText"> <span>User:</span> <%= message.username %></p>
+        <p class="openText"> <span>Message:</span> <%= message.text %></p>
+        <p class="openText"> <span>Date:</span> <%= new Intl.DateTimeFormat("es-MX", options).format(message.added) %></p>
 
     </main>
     <%- include('footer'); %>

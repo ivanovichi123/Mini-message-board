@@ -17,9 +17,10 @@
         <div id="board">
             <% messages.map((message, index) => { %>
             <div class="message">
-                <h3> <%= message.user %> </h3>
+                <% let options = { weekday: "long", year: "numeric", month: "long", day: "numeric", hour: "numeric", minute: "numeric" }; %>
+                <h3> <%= message.username %> </h3>
                 <p class="theMessage"> <%= message.text %> </p>
-                <a href="/open/<%= index %>"> Message info </a>
+                <a href="/open/<%= message.id %>"> Message info </a>
                 <p class="date"> <%= new Intl.DateTimeFormat("es-MX", options).format(message.added) %> </p>
             </div>
             <% }) %>
